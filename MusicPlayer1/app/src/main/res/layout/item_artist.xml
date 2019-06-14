@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.musicplayer1.models.Artist">
+        </variable>
+
+        <variable
+            name="listener"
+            type="com.example.musicplayer1.fragment.MediaListener"></variable>
+
+    </data>
+    
+    
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFB6A1"
+        android:padding="5dp"
+        android:onClick="@{(v) -> listener.onItemMediaClick(item)}">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_music"
+                android:background="#00838f"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="3dp"
+                android:layout_marginLeft="10dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.getArtist()}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20dp"
+                    />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/so1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{item.getNumberMusic()}"
+                        android:textColor="#FFFFFF"
+                        />
+                    <TextView
+                        android:id="@+id/so2"
+                        android:layout_toRightOf="@+id/so1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Bài hát"
+                        android:textColor="#FFFFFF"
+                        />
+                    <TextView
+                        android:id="@+id/so3"
+                        android:layout_toRightOf="@+id/so2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@{item.getNumberAlbum()}"
+                        android:textColor="#FFFFFF"
+                        />
+                    <TextView
+                        android:layout_toRightOf="@+id/so3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Album"
+                        android:textColor="#FFFFFF"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="music"
+            type="com.example.musicplayer1.models.Music"></variable>
+
+        <variable
+            name="isPlaying"
+            type="java.lang.Boolean"></variable>
+
+        <variable
+            name="current"
+            type="java.lang.Integer"></variable>
+
+        <variable
+            name="listener"
+            type="com.example.musicplayer1.view.MP3PlayViewListener"></variable>
+    </data>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_music"
+            />
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{music.title}"
+                android:textSize="30dp"
+                android:textColor="#FFFFFF"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{music.artist}"
+                android:textColor="#FFFFFF"/>
+            <SeekBar
+                android:id="@+id/sb_time"
+                android:max="@{music.duration}"
+                android:progress="@{current}"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    app:time="@{current}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"/>
+                <TextView
+                    android:layout_alignParentRight="true"
+                    app:time="@{music.duration}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"/>
+            </RelativeLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_previous"
+                    android:onClick="@{(v)->listener.prev()}"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:selected="@{isPlaying}"
+                    android:src="@drawable/ic_state_play"
+                    android:onClick="@{(v)->listener.play()}"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_next"
+                    android:onClick="@{(v)->listener.next()}"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
