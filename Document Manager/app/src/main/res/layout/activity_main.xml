@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.t3h.documentmanager.ViewListener"></variable>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:background="#E0E0E0">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:layout_margin="7dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:onClick="@{(v) -> listener.onClickALLDOC()}">
+
+                    <ImageView
+                        android:id="@+id/im_all_doc"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/all_doc"/>
+
+                    <TextView
+                        android:id="@+id/tv_all_doc"
+                        android:layout_below="@+id/im_all_doc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="ALL DOC"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:onClick="@{(v) -> listener.onClickPDF()}">
+
+                    <ImageView
+                        android:id="@+id/im_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/pdf"/>
+
+                    <TextView
+                        android:id="@+id/tv_pdf"
+                        android:layout_below="@+id/im_pdf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="PDF"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:onClick="@{(v) -> listener.onClickDOC()}">
+
+                    <ImageView
+                        android:id="@+id/im_doc"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/doc"/>
+
+                    <TextView
+                        android:id="@+id/tv_doc"
+                        android:layout_below="@+id/im_doc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="DOC"/>
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:onClick="@{(v) -> listener.onClickTXT()}">
+
+                    <ImageView
+
+                        android:id="@+id/im_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/document"/>
+
+                    <TextView
+                        android:id="@+id/tv_txt"
+                        android:layout_below="@+id/im_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="TXT"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:onClick="@{(v) -> listener.onClickXLS()}">
+
+                    <ImageView
+                        android:id="@+id/im_xls"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/excel"/>
+
+                    <TextView
+                        android:id="@+id/tv_xls"
+                        android:layout_below="@+id/im_xls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="XLS"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:onClick="@{(v) -> listener.onClickPPT()}">
+
+                    <ImageView
+                        android:id="@+id/im_ppt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ppt"/>
+
+                    <TextView
+                        android:id="@+id/tv_ppt"
+                        android:layout_below="@+id/im_ppt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="PPT"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="#FFFFFF"
+            android:layout_margin="7dp"></LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+
